@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
+
 const LogIn = () => {
   const [id, setId] = useState("");
   const [api, setApi] = useState("");
@@ -15,6 +18,8 @@ const LogIn = () => {
           console.log(data);
           setId("");
           setApi("");
+          localStorage.setItem('userId', id)
+          localStorage.setItem('userApi', api)
           navigate("/message");
         }
       })
